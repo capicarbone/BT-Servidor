@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BT-server</string>
+    <string name="boton_iniciar">Recibir conexiones</string>
+    <string name="menu_settings">Settings</string>
+    <string name="respuesta">En espera...</string>
+    <string name="title_activity_servidor">ServidorAct</string>
+
+</resources>
