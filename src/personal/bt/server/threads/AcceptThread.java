@@ -52,11 +52,20 @@ public class AcceptThread extends Thread{
 			}
 			
 			if (entrante != null){
-				respuesta.setText("Conexión recibida y establecida");
+				
+				respuesta.post(new Runnable() {
+					
+					public void run() {
+						respuesta.setText("Conexión establecida");
+						
+					}									
+					
+				});
+				
 				try {
-					btServerSocket.close();
+					btServerSocket.close();					
 				} catch (IOException e) {					
-					e.printStackTrace();
+					
 				}
 				break;
 			}
@@ -64,6 +73,4 @@ public class AcceptThread extends Thread{
 	
 	}
 	
-	
-
 }

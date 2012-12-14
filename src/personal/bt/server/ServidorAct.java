@@ -35,7 +35,8 @@ public class ServidorAct extends Activity {
 				startActivityForResult(enableBtIntent, PETICION_ACTION_BT);
 			}
 			
-			hiloServidor = new AcceptThread(btAdapter, respuesta);			
+			hiloServidor = new AcceptThread(btAdapter, respuesta);	
+			hiloServidor.start();
 			
 		}
 				
@@ -46,7 +47,7 @@ public class ServidorAct extends Activity {
 		
 		super.onResume();			
 				
-		hiloServidor.start();
+		
 	}
 
 	@Override
