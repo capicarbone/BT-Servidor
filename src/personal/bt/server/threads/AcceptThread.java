@@ -56,8 +56,7 @@ public class AcceptThread extends Thread{
 				respuesta.post(new Runnable() {
 					
 					public void run() {
-						respuesta.setText("Conexión establecida");
-						
+						respuesta.setText("Conexión establecida");						
 					}									
 					
 				});

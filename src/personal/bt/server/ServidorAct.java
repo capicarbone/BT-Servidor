@@ -1,5 +1,6 @@
 package personal.bt.server;
 
+import personal.bt.server.backtasks.RecibirConexionTask;
 import personal.bt.server.threads.AcceptThread;
 import android.os.Bundle;
 import android.app.Activity;
@@ -13,7 +14,8 @@ public class ServidorAct extends Activity {
 	private BluetoothAdapter btAdapter;
 	private static final int PETICION_ACTION_BT = 45;
 	
-	private AcceptThread hiloServidor;
+	//private AcceptThread hiloServidor;
+	private RecibirConexionTask servidorTask;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +37,11 @@ public class ServidorAct extends Activity {
 				startActivityForResult(enableBtIntent, PETICION_ACTION_BT);
 			}
 			
-			hiloServidor = new AcceptThread(btAdapter, respuesta);	
-			hiloServidor.start();
+			servidorTask = new RecibirConexionTask(btAdapter, respuesta);
+			servidorTask.execute();
+			
+			//hiloServidor = new AcceptThread(btAdapter, respuesta);	
+			//hiloServidor.start();
 			
 		}
 				
